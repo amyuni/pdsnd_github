@@ -2,10 +2,10 @@
 12 April 2020
 
 ### Project Title
-**Bikeshare Preview and Analytics in Python**
+**US Bikeshare Preview and Analytics in Python**
 
 ### Description
-Preview and analyse the bikeshare data of user chosen timeline to summarise general time, station, time duration and user stats.
+Interactive python file to preview and analyse US bikeshare data (Chicago, New York and Washington) of user chosen timeline (month, day) to summarise 
 
 - General time stats:  most commonth month, week and start hour
 - Station stats:  most commonly used start station, most commonly used end station, most frequent start-end station trip
@@ -19,6 +19,9 @@ chicago.csv
 new_york_city.csv
 washington.csv
 
+### Needed software
+Python 3, NumPy, and pandas 
+Terminal application to run python file
 
 ### Credits
 Udacity
