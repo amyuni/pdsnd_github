@@ -1,15 +1,17 @@
 ### Date created
-Include the date you created this project and README file.
+12 April 2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare Analytics
 
 ### Description
-Describe what your project is about and what it does
+Analyse the bikeshare data of chosen timeline to summarise general time, station, time duration and user stats.
 
 ### Files used
-Include the files used
+bikeshare_submit.py
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Udacity
+original repository:  https://github.com/udacity/pdsnd_github.git
 
