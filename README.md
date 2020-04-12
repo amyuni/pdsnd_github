@@ -5,7 +5,7 @@
 **US Bikeshare Preview and Analytics in Python**
 
 ### Description
-Interactive python file to preview and analyse US bikeshare data (Chicago, New York and Washington) of user chosen timeline (month, day) to summarise 
+Interactive python file to preview and analyse US bikeshare data (Chicago, New York and Washington) of user's chosen timeline (month, day) to summarise 
 
 - General time stats:  most commonth month, week and start hour
 - Station stats:  most commonly used start station, most commonly used end station, most frequent start-end station trip
@@ -14,13 +14,16 @@ Interactive python file to preview and analyse US bikeshare data (Chicago, New Y
 
 
 ### Files used 
-bikeshare_submit.py
-chicago.csv
-new_york_city.csv
-washington.csv
+- bikeshare_submit.py
+
+US bikeshare raw data,
+- chicago.csv
+- new_york_city.csv
+- washington.csv
 
 ### Needed software
-Python 3, NumPy, and pandas 
+Python 3, NumPy, pandas 
+
 Terminal application to run python file
 
 ### Credits
