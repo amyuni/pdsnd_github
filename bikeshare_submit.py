@@ -6,14 +6,14 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
-months_list = ['all','january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+months = ['all','january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 
-day_list = ['all','monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+days = ['all','monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
 
 def preview():
     preview = input("\nHi!\nWould you like to preview the first 5 rows of US bikeshare raw data? Enter yes or no.\n").lower()
-
+    
     while preview:
         if preview == 'yes':
             city = input("\nEnter city to explore (chicago, new york city, washington): ").lower()
@@ -40,19 +40,19 @@ def get_filters():
     print('-'*40)
     print('\nHello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-
+    
     city = input("\n\nSelect a city (chicago / new york city / washington)\nEnter choosen city: ").lower()
     while city not in (CITY_DATA.keys()):
             city = input("Invalid input.\nKindly select one of these cities (chicago / new york city / washington): ").lower()
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input("\nSelect a month (all / january / february / etc.)\nEnter choosen month: ").lower()
-    while month not in months_list:
+    while month not in months:
         month = input("Invalid input.\nKindly select a valid month (all / january / february / etc.): ").lower()
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day = input("\nSelect a day of week (all / monday / tuesday / etc.)\nEnter choosen day of week : ").lower()
-    while day not in day_list:
+    while day not in day:
         day = input("Invalid input.\nKindly select a valid day of week (all / monday / tuesday / etc.): ").lower()
 
 
@@ -71,7 +71,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-
+    
     # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
@@ -85,7 +85,7 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        month = months_list.index(month)
+        month = months.index(month)
 
         # filter by month to create the new dataframe
         df = df.query('month == @month')
@@ -94,9 +94,8 @@ def load_data(city, month, day):
     if day != 'all':
         # filter by day of week to create the new dataframe
         df = df.query('day_of_week == @day.title()')
-
+       
     return df
-
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
@@ -106,7 +105,7 @@ def time_stats(df):
 
     # TO DO: display the most common month
     common_month_index = df['month'].mode()[0]
-    print("Most Common Month: {}".format(months_list[common_month_index].title()))
+    print("Most Common Month: {}".format(months[common_month_index].title()))
 
 
     # TO DO: display the most common day of week
@@ -184,8 +183,8 @@ def user_stats(df):
     # TO DO: Display counts of user types
     user_count = df['User Type'].value_counts()
     print("User Count:\n{}\n".format(user_count))
-
-    while True:
+    
+    while True: 
         try:
             # TO DO: Display counts of gender
             gender_count = df['Gender'].value_counts()
@@ -194,7 +193,7 @@ def user_stats(df):
         except:
             print("Raw data does not include 'Gender' column.")
             break
-
+        
     while True:
         try:
             # TO DO: Display earliest, most recent, and most common year of birth
@@ -220,15 +219,15 @@ def user_stats(df):
 def main():
     while True:
         preview()
-
+        
         city, month, day = get_filters()
         df = load_data(city, month, day)
-
+        
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-
+        
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
