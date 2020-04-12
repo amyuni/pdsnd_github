@@ -26,6 +26,9 @@ Python 3, NumPy, pandas
 
 Terminal application to run python file
 
+### Running bikeshare_submit.py
+In terminal, key in "python bikeshare.py"
+
 ### Credits
 Udacity
 original repository:  https://github.com/udacity/pdsnd_github.git
